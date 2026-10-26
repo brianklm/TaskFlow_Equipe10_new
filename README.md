@@ -107,41 +107,51 @@ Un parcours complet de bout en bout (ajout, modification, sauvegarde, redémarra
 
 | Élément | Valeur |
 |---|---|
-| **Emplacement** | `taskflow-donnees.txt` dans le dossier d'où l'application est lancée (ou le chemin passé en argument) |
-| **Format** | Texte, une ligne par tâche, champs séparés par une tabulation |
+| **Emplacement** | `taskflow-donnees.csv` dans le dossier d'où l'application est lancée (ou le chemin passé en argument) |
+| **Format** | CSV (Comma-Separated Values), avec une ligne d'en-tête et une ligne par tâche |
+| **Séparateur** | Virgule(,) |
 | **Encodage** | UTF-8 |
 | **Création** | Lors de la première sauvegarde explicite (menu 6) |
 
 ### Exemple de contenu
 
-```text
-#TASKFLOW v1
-#PROCHAIN_ID=4
-1<TAB>ELEVEE<TAB>2026-10-05<TAB>TERMINEE<TAB>Vérifier la sauvegarde du serveur
-2<TAB>NORMALE<TAB><TAB>A_FAIRE<TAB>Mettre à jour le guide utilisateur
-3<TAB>BASSE<TAB>2026-11-15<TAB>A_FAIRE<TAB>Préparer le poste, bureau 3
-#FIN
+```id,titre,priorite,echeance,statut
+1,"Vérifier le serveur",ELEVEE,2026-10-05,A_FAIRE
+2,"Mettre à jour le guide utilisateur",NORMALE,,A_FAIRE
+3,"Préparer le poste, bureau 3",BASSE,2026-11-15,TERMINEE
 ```
-
-(`<TAB>` représente le caractère de tabulation.) Un exemple prêt à l'emploi se trouve dans `data/fixtures/valide.txt`.
 
 ### Représentation des valeurs
 
-- **Champs d'une tâche** : identifiant, priorité, échéance, statut, titre.
-- **Priorité** : `BASSE`, `NORMALE` ou `ELEVEE`.
-- **Statut** : `A_FAIRE` ou `TERMINEE`.
-- **Échéance absente** : champ vide.
-- **Titre** : dans le titre, le caractère `\` est écrit `\\`, la tabulation `\t`, le saut de ligne `\n` et le retour chariot `\r`.
+Champs d'une tâche : identifiant, titre, priorité, échéance et statut, dans cet ordre.
+
+Priorité : BASSE, NORMALE ou ELEVEE.
+
+Statut : A_FAIRE ou TERMINEE.
+
+Échéance absente : le champ reste vide entre deux virgules.
+
+Titre : texte de la tâche. Si le titre contient une virgule, un guillemet ou un retour à la ligne, le champ doit être entouré de guillemets doubles. Un guillemet présent dans le titre est représenté par deux guillemets doubles.
+
+Identifiant : entier positif, unique et conservé entre les exécutions.
 - **Identifiants** : la ligne `#PROCHAIN_ID=n` conserve le prochain identifiant à attribuer; il doit être supérieur au plus grand identifiant du fichier.
 - **Ligne `#FIN`** : obligatoire en dernière ligne, elle permet de détecter un fichier tronqué.
 
-## Sauvegarde et rechargement
+### Sauvegarde et rechargement
 
-- **Sauvegarde** : uniquement sur commande (menu *6. Sauvegarder les données*). Quitter sans sauvegarder ne conserve pas les modifications; l'application demande alors une confirmation. L'écriture passe par un fichier temporaire, ce qui protège un fichier valide existant en cas d'échec.
-- **Rechargement** : automatique au démarrage si le fichier existe. Toutes les informations sont conservées; les identifiants restent identiques; une nouvelle tâche reçoit un identifiant distinct.
-- **Fichier absent** : démarrage avec une liste vide.
-- **Fichier illisible ou mal formé** (y compris fichier vide ou tronqué) : message d'erreur, démarrage interrompu, fichier **non modifié**.
-- **Échec d'écriture** : message d'erreur clair, aucun message de réussite.
+**Sauvegarde** : uniquement sur commande (menu 6. Sauvegarder les données). Quitter sans sauvegarder ne conserve pas les modifications ; l'application demande alors une confirmation. L'écriture est effectuée dans un fichier temporaire avant le remplacement du fichier existant, afin de protéger les données en cas d'échec.
+
+**Rechargement** : automatique au démarrage si le fichier CSV existe. Toutes les informations des tâches sont conservées, notamment les identifiants. Une nouvelle tâche reçoit un identifiant distinct.
+
+**Fichier absent** : l'application démarre avec une liste vide. Le fichier CSV n'est pas créé automatiquement au démarrage ; il est créé lors de la première sauvegarde explicite.
+
+**Fichier illisible ou mal formé** : un message d'erreur est affiché et le démarrage est interrompu. Le fichier d'origine n'est pas modifié. Cette règle s'applique notamment aux fichiers vides ou tronqués.
+
+**Échec d'écriture** : un message d'erreur clair est affiché et aucun message de réussite n'est présenté.
+
+**Format et encodage** : le fichier utilise le format CSV et l'encodage UTF-8. Les règles d'échappement CSV sont appliquées à la lecture et à l'écriture afin de préserver les titres contenant des virgules, des guillemets ou des retours à la ligne.
+
+**Identifiants** : après le rechargement, le prochain identifiant est déterminé à partir des identifiants existants afin d'éviter les doublons.
 
 ## Structure du projet
 
@@ -172,7 +182,7 @@ taskflow/
 | 4 | Un fichier de données vide est traité comme mal formé | Démarrage interrompu | Choix de conception |
 | 5 | Les titres sont enregistrés sans les espaces de début et de fin | Données | Choix de conception |
 
-*(Compléter avec les anomalies trouvées lors des vérifications de `docs/verification.md`.)*
+
 
 ## Fonctionnalités envisagées (hors exigences)
 

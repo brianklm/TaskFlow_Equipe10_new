@@ -141,7 +141,7 @@ Décisions qui modifient le produit, le backlog ou la façon de travailler.
 
 | Date | Décision | Raison | Personnes concernées |
 |---|---|---|---|
-| AAAA-MM-JJ | *(ex. format du fichier : JSON)* | *(ex. lisible, titres avec virgules sans problème)* | Toute l'équipe |
+| 2026-10-20 | *Adopter le format CSV UTF-8 pour le fichier taskflow-donnees.csv, avec les colonnes id, titre, priorite, echeance et statut* | *Le format CSV est lisible, simple à examiner dans un éditeur de texte et adapté aux champs fixes d'une tâche. Les règles d'échappement permettent de conserver les titres contenant des virgules ou des guillemets* | Toute l'équipe |
 | AAAA-MM-JJ | *(ex. PR de 200 lignes maximum)* | *(constat de rétrospective de l'itération 1)* | Toute l'équipe |
 
 ## 8. Contribution de chaque membre

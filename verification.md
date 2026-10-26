@@ -17,9 +17,9 @@
 
 ### Légende des conclusions
 
-- ✅ **Conforme** : résultat observé = résultat attendu
-- ❌ **Non conforme** : écart, à consigner dans la section 5 (anomalies)
-- ⚠️ **Conforme avec réserve** : fonctionne, mais comportement à préciser
+- **Conforme** : résultat observé = résultat attendu
+- **Non conforme** : écart, à consigner dans la section 5 (anomalies)
+-  **Conforme avec réserve** : fonctionne, mais comportement à préciser
 
 ### Répartition des scénarios
 
@@ -43,7 +43,7 @@ Principe : un scénario est exécuté par un membre qui **n'est pas l'auteur** d
 
 ## 2. Préparation de l'environnement
 
-Avant chaque scénario, partir d'un état connu. Convention : le fichier de données est `taskflow-donnees.txt` dans le dossier d'où l'application est lancée (ou le chemin passé en argument).
+Avant chaque scénario, partir d'un état connu. Convention : le fichier de données est `taskflow-donnees.csv` dans le dossier d'où l'application est lancée (ou le chemin passé en argument).
 
 | Situation de départ | Comment la préparer |
 |---|---|
@@ -81,7 +81,6 @@ Ces fichiers sont déjà dans `data/fixtures/` (`corrompu-champ.txt`, `corrompu-
 | 12 | Échec d'écriture | ⬜ | US-16 |
 | — | Parcours de bout en bout | ⬜ | Tous |
 
-*(Remplacer ⬜ par ✅, ❌ ou ⚠️.)*
 
 ## 4. Scénarios détaillés
 

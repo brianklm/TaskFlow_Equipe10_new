@@ -18,6 +18,18 @@ public class GestionnaireTaches {
                               Priorite priorite,
                               LocalDate echeance) {
 
+                                if (titre == null || titre.trim().isEmpty()) {
+                                    throw new IllegalArgumentException(
+                                        "Le titre est obligatoire."
+                                    );
+                                }
+
+                                if (priorite == null) {
+                                    throw new IllegalArgumentException(
+                                        "La priorité est obligatoire."
+                                    );
+                                }
+
         Tache tache = new Tache(
                 prochainId,
                 titre,

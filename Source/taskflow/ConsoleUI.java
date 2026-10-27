@@ -89,93 +89,156 @@ public class ConsoleUI {
     // AJOUTER UNE TÂCHE
     // ==============================
 
-    private void ajouterTache() {
+    
 
-        System.out.println("\nAJOUTER UNE TÂCHE");
+private void ajouterTache() {
+
+    System.out.println("\nAJOUTER UNE TÂCHE");
+
+    String titre;
+    Priorite priorite;
+    LocalDate echeance;
+
+    // 1. Saisie et validation du titre
+    while (true) {
 
         System.out.print("\nTitre : ");
-        String titre = scanner.nextLine();
+        titre = scanner.nextLine().trim();
 
-        if (titre.trim().isEmpty()) {
+        if (!titre.isEmpty()) {
+            break;
+        }
+
+        System.out.println(
+                "Erreur : le titre est obligatoire. "
+                + "Veuillez saisir un titre ou annuler l'ajout."
+        );
+
+        if (!demanderCorrectionOuAnnulation()) {
             System.out.println(
-                    "Erreur : le titre est obligatoire."
+                    "Ajout annulé. Aucune tâche créée."
             );
             return;
         }
+    }
+
+    // 2. Saisie et validation de la priorité
+    while (true) {
 
         System.out.println(
                 "\nPriorité : Basse, Normale ou Élevée"
         );
-
         System.out.println(
                 "Appuyez sur Entrée pour choisir Normale."
         );
-
         System.out.print("Votre priorité : ");
+
         String textePriorite = scanner.nextLine();
 
-        Priorite priorite;
-
         try {
-
-            priorite =
-                    Priorite.depuisTexte(textePriorite);
+            priorite = Priorite.depuisTexte(textePriorite);
+            break;
 
         } catch (IllegalArgumentException e) {
 
             System.out.println(
-                    "Erreur : " + e.getMessage()
+                    "Erreur : la priorité doit être "
+                    + "Basse, Normale ou Élevée."
             );
 
-            return;
+            if (!demanderCorrectionOuAnnulation()) {
+                System.out.println(
+                        "Ajout annulé. Aucune tâche créée."
+                );
+                return;
+            }
         }
+    }
+
+    // 3. Saisie et validation de l'échéance
+    while (true) {
 
         System.out.println(
                 "\nÉchéance au format AAAA-MM-JJ"
         );
-
         System.out.println(
                 "Appuyez sur Entrée pour ne pas préciser d'échéance."
         );
-
         System.out.print("Votre échéance : ");
 
-        String texteDate = scanner.nextLine();
+        String texteDate = scanner.nextLine().trim();
 
-        LocalDate echeance = null;
+        if (texteDate.isEmpty()) {
+            echeance = null;
+            break;
+        }
 
-        if (!texteDate.trim().isEmpty()) {
+        // Vérifier d'abord le format attendu
+        if (!texteDate.matches("\\d{4}-\\d{2}-\\d{2}")) {
+
+            System.out.println(
+                    "Erreur : format de date invalide. "
+                    + "Le format attendu est AAAA-MM-JJ."
+            );
+
+        } else {
 
             try {
-
-                echeance =
-                        LocalDate.parse(texteDate.trim());
+                echeance = LocalDate.parse(texteDate);
+                break;
 
             } catch (DateTimeParseException e) {
 
                 System.out.println(
-                        "Erreur : date ou format invalide."
+                        "Erreur : " + texteDate
+                        + " n'est pas une date valide."
                 );
-
-                System.out.println(
-                        "Le format attendu est AAAA-MM-JJ."
-                );
-
-                return;
             }
         }
 
-        Tache tache = gestionnaire.ajouterTache(
-                titre,
-                priorite,
-                echeance
+        if (!demanderCorrectionOuAnnulation()) {
+            System.out.println(
+                    "Ajout annulé. Aucune tâche créée."
+            );
+            return;
+        }
+    }
+
+    // 4. Création : uniquement après validation de toutes les saisies
+    Tache tache = gestionnaire.ajouterTache(
+            titre,
+            priorite,
+            echeance
+    );
+
+    System.out.println("\nTâche ajoutée avec succès.");
+    afficherDetails(tache);
+}
+
+
+private boolean demanderCorrectionOuAnnulation() {
+
+    while (true) {
+
+        System.out.print(
+                "Voulez-vous corriger la saisie "
+                + "ou annuler l'ajout ? (C/A) : "
         );
+
+        String choix = scanner.nextLine().trim();
+
+        if (choix.equalsIgnoreCase("C")) {
+            return true;
+        }
+
+        if (choix.equalsIgnoreCase("A")) {
+            return false;
+        }
 
         System.out.println(
-                "\nTâche ajoutée avec succès."
+                "Erreur : veuillez saisir C pour corriger "
+                + "ou A pour annuler."
         );
-
-        afficherDetails(tache);
     }
 }
-    
+

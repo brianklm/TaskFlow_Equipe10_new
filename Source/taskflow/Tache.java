@@ -23,7 +23,7 @@ public class Tache {
 
         this.id = id;
         this.titre = titre.trim();
-        this.priorite = priorite == null ? Priorite.NORMALE : priorite;
+        this.priorite = priorite == null ? Priorite.Normale : priorite;
         this.echeance = echeance;
         this.terminee = terminee;
     }

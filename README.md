@@ -10,9 +10,9 @@
 | Membre | Compte GitHub | Responsabilité de coordination |
 |---|---|---|
 | Kelome Mamondé Brian | @… | Dépôt et intégrations |
-| Trabi Christ Emmanuel | @… | Backlog et GitHub Projects |
+| Trabi Christ Emmanuel | @… |V2rificqtions |
 | Kolié Odile Haoussa | @… | Documentation |
-| Touré Karim | @… | Vérifications |
+| Touré Karim | @… |Backlog et GitHub Projects   |
 | Agoua Sopie Doryne Marie-Noelle | @… | Suivi des itérations et rétrospectives |
 
 Organisation du travail, backlog, itérations et contributions : voir [`docs/organisation.md`](docs/organisation.md).

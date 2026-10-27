@@ -15,7 +15,7 @@
 | Touré Karim | @… |Backlog et GitHub Projects   |
 | Agoua Sopie Doryne Marie-Noelle | @… | Suivi des itérations et rétrospectives |
 
-Organisation du travail, backlog, itérations et contributions : voir [`docs/organisation.md`](docs/organisation.md).
+Organisation du travail, backlog, itérations et contributions : voir https://github.com/brianklm/TaskFlow_Equipe10_new/blob/7df5ccdda7164e22bf8295dc8694ed82457d834a/organisation.md.
 Scénarios de vérification et résultats : voir [`docs/verification.md`](docs/verification.md).
 
 ## Fonctionnalités disponibles

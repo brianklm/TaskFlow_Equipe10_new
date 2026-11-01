@@ -1,23 +1,41 @@
 package taskflow;
 
 public enum Priorite {
-    Basse,
-    Normale,
-    Élevée;    
-    public static Priorite depuisTexte(String texte) {
-        if (texte == null || texte.trim().isEmpty()) {
-            return Normale;
-        }
+    BASSE("Basse"),
+    NORMALE("Normale"),
+    ELEVEE("Élevée");
 
-        for (Priorite priorite : values()) {
-            if (priorite.name().equalsIgnoreCase(texte.trim())) {
-                return priorite;
-            }
-        }
+    private final String affichage;
 
-        throw new IllegalArgumentException(
-                "Priorité invalide : " + texte
-        );
+    Priorite(String affichage) {
+        this.affichage = affichage;
     }
 
+    @Override
+    public String toString() {
+        return affichage;
+    }
+
+    public static Priorite depuisTexte(String texte) {
+        if (texte == null || texte.trim().isEmpty()) {
+            return NORMALE;
+        }
+
+        String valeur = texte.trim()
+                .toLowerCase()
+                .replace("é", "e");
+
+        switch (valeur) {
+            case "basse":
+                return BASSE;
+            case "normale":
+                return NORMALE;
+            case "elevee":
+                return ELEVEE;
+            default:
+                throw new IllegalArgumentException(
+                        "La priorité doit être Basse, Normale ou Élevée."
+                );
+        }
+    }
 }

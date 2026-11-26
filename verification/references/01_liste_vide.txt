@@ -1,0 +1,33 @@
+TASKFLOW — Gestion des tâches
+
+Aucun fichier de données trouvé ou aucune tâche enregistrée.
+L'application démarre avec une liste vide.
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+LISTE DES TÂCHES
+
+Aucune tâche à afficher.
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+Fermeture de TaskFlow.
+Au revoir !

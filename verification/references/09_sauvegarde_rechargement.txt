@@ -1,0 +1,131 @@
+TASKFLOW — Gestion des tâches
+
+Aucun fichier de données trouvé ou aucune tâche enregistrée.
+L'application démarre avec une liste vide.
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+AJOUTER UNE TÂCHE
+
+Titre : 
+Priorité : Basse, Normale ou Élevée
+Appuyez sur Entrée pour choisir Normale.
+Votre priorité : 
+Échéance au format AAAA-MM-JJ
+Appuyez sur Entrée pour ne pas préciser d'échéance.
+Votre échéance : 
+Tâche ajoutée avec succès.
+
+Identifiant : 1
+Titre : Sauvegarder le rapport
+Priorité : Élevée
+Échéance : 2026-12-22
+Statut : À faire
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+SAUVEGARDE DES DONNÉES
+
+Sauvegarde réussie : 1 tâches enregistrées.
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+Fermeture de TaskFlow.
+Au revoir !
+TASKFLOW — Gestion des tâches
+
+Chargement du fichier de données...
+1 tâches chargées avec succès.
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+LISTE DES TÂCHES
+
+
+Identifiant : 1
+Titre : Sauvegarder le rapport
+Priorité : Élevée
+Échéance : 2026-12-22
+Statut : À faire
+-------------------------
+Nombre de tâches : 1
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+MARQUER UNE TÂCHE COMME TERMINÉE
+
+Identifiant de la tâche : Erreur : aucune tâche ne correspond à l'identifiant 99.
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+MODIFIER LA PRIORITÉ
+
+Identifiant de la tâche : Erreur : l'identifiant doit être un nombre.
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+Fermeture de TaskFlow.
+Au revoir !

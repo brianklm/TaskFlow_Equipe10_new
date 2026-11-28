@@ -1,0 +1,84 @@
+TASKFLOW — Gestion des tâches
+
+Aucun fichier de données trouvé ou aucune tâche enregistrée.
+L'application démarre avec une liste vide.
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+AJOUTER UNE TÂCHE
+
+Titre : 
+Priorité : Basse, Normale ou Élevée
+Appuyez sur Entrée pour choisir Normale.
+Votre priorité : 
+Échéance au format AAAA-MM-JJ
+Appuyez sur Entrée pour ne pas préciser d'échéance.
+Votre échéance : 
+Tâche ajoutée avec succès.
+
+Identifiant : 1
+Titre : Faire les exercices
+Priorité : Basse
+Échéance : Aucune
+Statut : À faire
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+MODIFIER LA PRIORITÉ
+
+Identifiant de la tâche : Priorité actuelle : Basse
+Nouvelle priorité : La priorité de la tâche 1 a été modifiée : Basse → Élevée.
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+LISTE DES TÂCHES
+
+
+Identifiant : 1
+Titre : Faire les exercices
+Priorité : Élevée
+Échéance : Aucune
+Statut : À faire
+-------------------------
+Nombre de tâches : 1
+
+TASKFLOW — Gestion des tâches
+
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+
+Votre choix : 
+Fermeture de TaskFlow.
+Au revoir !
